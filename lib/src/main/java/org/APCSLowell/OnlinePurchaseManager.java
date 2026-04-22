@@ -12,9 +12,18 @@ public class OnlinePurchaseManager {
      */
     public int countElectronicsByMaker(String maker) {
         /* to be implemented in part (a) */
-
-    }
-
+        for (int i =0; i <purchases.size(); i++) {
+            Gizmo g= purchases.get(i);
+            if (g.isElectronc() && g.getmaker().equals(maker))
+                count ++;
+        }
+        return count;
+       
+        for (int i = 0; i <purchases.size()-1; i++) 
+            if (purchases.get(i).equals(purchases.get(i+1)))
+                return true;
+            return false;
+        }
     /** Returns true if any pair of adjacent purchased Gizmo objects are
      * equivalent, and false otherwise, as described in part (b).
      */
